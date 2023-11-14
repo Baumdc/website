@@ -199,37 +199,38 @@ body {
     </form>
   </div>
 
-  <script>
-    async function hashString(input) {
-      const encoder = new TextEncoder();
-      const data = encoder.encode(input);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-      return hashHex;
+  
+<script>
+  async function hashString(input) {
+    const data = new TextEncoder().encode(input);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+  }
+
+  async function login() {
+    var usernameInput = document.getElementById('username');
+    var passwordInput = document.getElementById('password');
+
+    var username = await hashString(usernameInput.value);
+    var password = await hashString(passwordInput.value);
+
+    // In a real-world scenario, fetch the hashed username and hashed password associated with the account from the server.
+    // For demonstration, using hardcoded values here.
+    const storedUsernameHash = '224c122501d021a4085b384a989b41d0ee3eb4f1c35895f387aa70216edaa9eb'; // Hash of 'der'
+    const storedPasswordHash = '80d49f584069a1d5dae3226eb97cc49a2bca5a04613299b48ed8bcededa7ca12'; // Hash of 'diedas'
+
+    // Check if the entered hashed username and hashed password match the expected values
+    if (username === storedUsernameHash && password === storedPasswordHash) {
+      alert('Login successful!');
+      // Add further logic here, such as redirecting to another page
+    } else {
+      alert('Invalid username or password. Please try again.');
     }
+  }
+</script>
 
-    async function login() {
-      var usernameInput = document.getElementById('username');
-      var passwordInput = document.getElementById('password');
-
-      var username = await hashString(usernameInput.value);
-      var password = await hashString(passwordInput.value);
-
-      // In a real-world scenario, fetch the hashed username and hashed password associated with the account from the server.
-      // For demonstration, using hardcoded values here.
-      const storedUsernameHash = '1007b95379e8ee82dad611de0c0ff2be65ff903102db91f92b21f87434361a09'; // Hash of 'der'
-      const storedPasswordHash = 'ad5aabc97d88f6e56deaffc34c7a6e292e9e12db04a56799d773cfb64ca9898d'; // Hash of 'diedas'
-
-      // Check if the entered hashed username and hashed password match the expected values
-      if (username === storedUsernameHash && password === storedPasswordHash) {
-        alert('Login successful!');
-        // Add further logic here, such as redirecting to another page
-      } else {
-        alert('Invalid username or password. Please try again.');
-      }
-    }
-  </script>
 </body>
 
 </html>
