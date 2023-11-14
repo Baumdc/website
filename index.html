@@ -3,97 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jump'n'Run Game</title>
-  <style>
-    canvas {
-      border: 1px solid #000;
-      display: block;
-      margin: 20px auto;
-    }
-  </style>
+  <title>Content Manager</title>
 </head>
 <body>
-  <canvas id="gameCanvas" width="800" height="400"></canvas>
+  <h1>Document List</h1>
+  <ul id="documentList"></ul>
 
   <script>
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
+    // Fetch document list from the server
+    fetch('get_documents.php')
+      .then(response => response.json())
+      .then(data => {
+        const documentList = document.getElementById('documentList');
 
-    const player = {
-      x: 50,
-      y: canvas.height - 30,
-      width: 20,
-      height: 20,
-      color: '#00F',
-      jumping: false,
-      jumpHeight: 60,
-      jumpCount: 0,
-      jumpMax: 2,
-      speed: 5,
-    };
-
-    function drawPlayer() {
-      ctx.fillStyle = player.color;
-      ctx.fillRect(player.x, player.y, player.width, player.height);
-    }
-
-    function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
-    function update() {
-      clearCanvas();
-      drawPlayer();
-
-      if (player.jumping) {
-        player.y -= 5;
-        player.jumpCount++;
-
-        if (player.jumpCount === player.jumpHeight || player.jumpCount < 0) {
-          player.jumping = false;
-        }
-      }
-
-      if (player.y < canvas.height - player.height) {
-        player.y += 2; // Simulate gravity
-      }
-    }
-
-    function jump() {
-      if (!player.jumping && player.jumpCount < player.jumpMax) {
-        player.jumping = true;
-        player.jumpCount = -player.jumpHeight; // Start the jump
-      }
-    }
-
-    function moveLeft() {
-      if (player.x - player.speed > 0) {
-        player.x -= player.speed;
-      }
-    }
-
-    function moveRight() {
-      if (player.x + player.width + player.speed < canvas.width) {
-        player.x += player.speed;
-      }
-    }
-
-    document.addEventListener('keydown', function (event) {
-      if (event.code === 'Space') {
-        jump();
-      } else if (event.code === 'ArrowLeft') {
-        moveLeft();
-      } else if (event.code === 'ArrowRight') {
-        moveRight();
-      }
-    });
-
-    function gameLoop() {
-      update();
-      requestAnimationFrame(gameLoop);
-    }
-
-    gameLoop();
+        data.forEach(document => {
+          const listItem = document.createElement('li');
+          listItem.textContent = document;
+          documentList.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error('Error fetching document list:', error));
   </script>
 </body>
 </html>
