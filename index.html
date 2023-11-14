@@ -1,236 +1,82 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Google Suche</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jump'n'Run Game</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #222;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-      position: relative;
-    }
-
-    h1 {
-      font-size: 80px;
-      margin: 0;
-      font-family: 'Liberation', sans;
-      font-weight: 200;
-    }
-
-    .clima-text {
-      font-size: 14px;
-      color: #777;
-      margin-top: 5px;
-    }
-
-    .llc-text {
-      font-size: 14px;
-      margin-top: 50px;
-    }
-
-    .emoji {
-      font-size: 24px;
-    }
-
-    main {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .text-container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
-
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    label {
-      display: none;
-    }
-
-    .search-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: none;
-      width: 100%;
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #666;
-      border-radius: 24px;
-      outline: none;
-      text-align: left;
-      background-color: #222;
-      color: #fff;
-    }
-
-    /* Hover-Effekt */
-    input[type="submit"]:hover,
-    #luck-button:hover {
-      background-color: #555;
-      color: #fff;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    input[type="submit"],
-    #luck-button {
-      background-color: #333;
-      color: #fff;
-      font-size: 16px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 24px;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    .profile-pic,
-    .circle-small {
-      position: absolute;
-      top: 8px;
-      right: 60px;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-    }
-
-    .circle-small+.circle-small {
-      right: 80px
-    }
-
-    .button-container button:hover,
-    .button-container button:not(:hover) {
-      background-color: #555;
-      color: #fff;
-    }
-
-    .circle-text {
-      background-color: transparent;
-      border: none;
-      font-size: 13px;
-      color: #fff;
-      text-align: center;
-      width: 50px;
-      position: absolute;
-      top: 20px;
-    }
-
-    .circle-textb {
-      background-color: transparent;
-      border: none;
-      font-size: 13px;
-      color: #fff;
-      text-align: center;
-      width: 105px;
-      position: absolute;
-      top: 20px;
-    }
-
-    .circle-text.gmail {
-      right: 140px;
-    }
-
-    .circle-text.store {
-      color: ;
-      right: 940px;
-    }
-
-    .circle-textb.uber {
-      color: ;
-      right: 980px;
-    }
-
-    .circle-text.bilder {
-      right: 90px;
-    }
-
-    .profile-pic img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-    .profile-pic img {
-  width: 40px; /* Ändern Sie die Breite nach Ihren Wünschen */
-  height: 40px; /* Ändern Sie die Höhe nach Ihren Wünschen */
-  border-radius: 50%;
-}
-
-    ::placeholder {
-      color: #ccc;
-    }
-
-    input[type="text"]:focus::placeholder {
-      color: transparent;
-    }
-
-    footer {
-      background-color: #222;
-      text-align: center;
-      padding: 50px 100;
+    canvas {
+      border: 1px solid #000;
+      display: block;
+      margin: 20px auto;
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Google</h1>
-    <div class="profile-pic">
-      <img src="https://thispersondoesnotexist.com" alt="Profile Picture">
-    </div>
-    <div class="circle-small"></div>
-    <a href="https://www.google.com/images"><button class="circle-text bilder">Bilder</button></a>
-    <div class="circle-small"></div>
-    <a href="https://mail.google.com/"><button class="circle-text gmail">Gmail</button></a>
-    <div class="circle-small"></div>
-    <a href="https://about.google/"><button class="circle-textb uber">Über Google</button></a>
-    <div class="circle-small"></div>
-    <a href="https://store.google.com/"><button class="circle-text store">Store</button></a>
-  </header>
-  <main>
-    <form action="https://www.google.com/search" method="GET">
-      <label for="search">suche:</label>
-      <div class="search-container">
-        <input type="text" id="search" name="q" required placeholder="         Suche">
-      </div>
-      <div class="button-container">
-        <input type="submit" value="Google-Suche">
-        <a href="https://www.google.com/doodles"><button id="luck-button" type="button">Auf gut Glück</button></a>
-      </div>
-    </form>
-    <div class="text-container">
-    </div>
-  </main>
-  <footer>
-    <p class="llc-text">&copy; 2023 Google</p>
-    <p class="clima-text">🍃Drei Jahrzehnte Klimaschutz: Jede Entscheidung zählt</p>
-  </footer>
-</body>
+  <canvas id="gameCanvas" width="800" height="400"></canvas>
 
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const player = {
+      x: 50,
+      y: canvas.height - 30,
+      width: 20,
+      height: 20,
+      color: '#00F',
+      jumping: false,
+      jumpHeight: 60,
+      jumpCount: 0,
+      jumpMax: 2,
+    };
+
+    function drawPlayer() {
+      ctx.fillStyle = player.color;
+      ctx.fillRect(player.x, player.y, player.width, player.height);
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function update() {
+      clearCanvas();
+      drawPlayer();
+
+      if (player.jumping) {
+        player.y -= 5;
+        player.jumpCount++;
+
+        if (player.jumpCount === player.jumpHeight || player.jumpCount < 0) {
+          player.jumping = false;
+        }
+      }
+
+      if (player.y < canvas.height - player.height) {
+        player.y += 2; // Simulate gravity
+      }
+    }
+
+    function jump() {
+      if (!player.jumping && player.jumpCount < player.jumpMax) {
+        player.jumping = true;
+        player.jumpCount = -player.jumpHeight; // Start the jump
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.code === 'Space') {
+        jump();
+      }
+    });
+
+    function gameLoop() {
+      update();
+      requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+  </script>
+</body>
 </html>
