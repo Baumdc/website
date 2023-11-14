@@ -1,6 +1,14 @@
 const block = document.getElementById('block');
 const gameContainer = document.getElementById('game-container');
+const counterElement = document.getElementById('counter');
+const timerElement = document.getElementById('timer');
+
 let counter = 0;
+let timer;
+let startTime;
+let elapsedTime = 0;
+const targetShapes = 5; // Change this value to set the number of shapes to interact with
+const gameDuration = 30; // Change this value to set the game duration in seconds
 
 block.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
@@ -18,13 +26,16 @@ block.addEventListener('touchmove', (e) => {
     block.style.left = `${newX}px`;
     block.style.top = `${newY}px`;
 
-    checkCollision(); // Check for collision with shapes
+    checkCollision();
+
+    if (counter >= targetShapes) {
+        stopGame();
+    }
 });
 
 function checkCollision() {
     const blockRect = block.getBoundingClientRect();
 
-    // Check collision with each shape
     document.querySelectorAll('.shape').forEach((shape) => {
         const shapeRect = shape.getBoundingClientRect();
 
@@ -34,11 +45,13 @@ function checkCollision() {
             blockRect.top < shapeRect.bottom &&
             blockRect.bottom > shapeRect.top
         ) {
-            // Collision detected
             shape.remove();
             counter++;
             updateCounter();
-            spawnRandomShape();
+
+            if (counter < targetShapes) {
+                spawnRandomShape();
+            }
         }
     });
 }
@@ -54,9 +67,30 @@ function spawnRandomShape() {
 }
 
 function updateCounter() {
-    document.getElementById('counter').innerText = `Counter: ${counter}`;
+    counterElement.innerText = `Counter: ${counter}`;
+}
+
+function startTimer() {
+    startTime = Date.now();
+    timer = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+    timerElement.innerText = `Time: ${elapsedTime}s`;
+
+    if (elapsedTime >= gameDuration) {
+        stopGame();
+    }
+}
+
+function stopGame() {
+    clearInterval(timer);
+    block.removeEventListener('touchstart');
+    block.removeEventListener('touchmove');
 }
 
 // Initial setup
+startTimer();
 spawnRandomShape();
 updateCounter();
