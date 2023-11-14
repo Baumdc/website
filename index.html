@@ -29,6 +29,7 @@
       jumpHeight: 60,
       jumpCount: 0,
       jumpMax: 2,
+      speed: 5,
     };
 
     function drawPlayer() {
@@ -65,9 +66,25 @@
       }
     }
 
+    function moveLeft() {
+      if (player.x - player.speed > 0) {
+        player.x -= player.speed;
+      }
+    }
+
+    function moveRight() {
+      if (player.x + player.width + player.speed < canvas.width) {
+        player.x += player.speed;
+      }
+    }
+
     document.addEventListener('keydown', function (event) {
       if (event.code === 'Space') {
         jump();
+      } else if (event.code === 'ArrowLeft') {
+        moveLeft();
+      } else if (event.code === 'ArrowRight') {
+        moveRight();
       }
     });
 
