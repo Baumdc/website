@@ -203,24 +203,22 @@ body {
 <script>
 
   async function login() {
-  var usernameInput = document.getElementById('username');
-  var passwordInput = document.getElementById('password');
+    var usernameInput = document.getElementById('username');
+    var passwordInput = document.getElementById('password');
 
-  // In a real-world scenario, fetch the hashed username and hashed password associated with the account from the server.
-  // For demonstration, using hardcoded values here.
-  const storedUsername = 'User';
-  const storedPassword = 'Name';
+    // Set the correct username and password
+    const storedUsername = 'admin';
+    const storedPassword = 'admin';
 
-  // Check if the entered username and password match the expected values
-  if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
-    alert('Login successful!');
-    window.location.href = 'google.html'; // Replace 'dashboard.html' with the desired page
-// Add further logic here, such as redirecting to another page
-  } else {
-    alert('Invalid username or password. Please try again.');
+    // Check if the entered username and password match the expected values
+    if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
+      alert('Login successful!');
+      window.location.href = 'google.html'; // Replace 'google.html' with the desired page
+      // Add further logic here, such as redirecting to another page
+    } else {
+      alert('Invalid username or password. Please try again.');
+    }
   }
-}
-
 </script>
 
 </body>
