@@ -202,23 +202,32 @@ body {
   
 <script>
 
+<script>
   async function login() {
     var usernameInput = document.getElementById('username');
     var passwordInput = document.getElementById('password');
 
-    // Set the correct username and password
-    const storedUsername = 'admin';
-    const storedPassword = 'admin';
+    // Set the correct usernames and passwords
+    const storedUsernames = ['admin', 'noone'];
+    const storedPasswords = {'admin': 'admin', 'noone': 'dom'};
 
     // Check if the entered username and password match the expected values
-    if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
+    if (storedUsernames.includes(usernameInput.value) && storedPasswords[usernameInput.value] === passwordInput.value) {
       alert('Login successful!');
-      window.location.href = 'google.html'; // Replace 'google.html' with the desired page
+      
+      // Redirect based on the username
+      if (usernameInput.value === 'noone') {
+        window.location.href = 'noone.html';
+      } else {
+        window.location.href = 'google.html'; // Replace 'google.html' with the desired page
+      }
+      
       // Add further logic here, such as redirecting to another page
     } else {
       alert('Invalid username or password. Please try again.');
     }
   }
+</script>
 </script>
 
 </body>
