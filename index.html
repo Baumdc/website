@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <title>Login Page</title>
+  <h1>Google</h1>
   <style>
     html {
   height: 100%;
@@ -204,32 +205,26 @@ body {
 
 <script>
   async function login() {
-    var usernameInput = document.getElementById('username');
-    var passwordInput = document.getElementById('password');
+  var usernameInput = document.getElementById('username');
+  var passwordInput = document.getElementById('password');
 
-    // Set the correct usernames and passwords
-    const storedUsernames = ['admin', 'noone'];
-    const storedPasswords = {'admin': 'admin', 'noone': 'dom'};
+  // In a real-world scenario, fetch the hashed username and hashed password associated with the account from the server.
+  // For demonstration, using hardcoded values here.
+  const storedUsername = 'User';
+  const storedPassword = 'Name';
 
-    // Check if the entered username and password match the expected values
-    if (storedUsernames.includes(usernameInput.value) && storedPasswords[usernameInput.value] === passwordInput.value) {
-      alert('Login successful!');
-      
-      // Redirect based on the username
-      if (usernameInput.value === 'noone') {
-        window.location.href = 'noone.html';
-      if (usernameInput.value === 'admin') {
-        window.location.href = 'google.html';
-      
-      } else {
-        alert('Invalid username or password. Please try again.');
-      }
-      
-      // Add further logic here, such as redirecting to another page
-    } else {
-      alert('Invalid username or password. Please try again.');
-    }
+  // Check if the entered username and password match the expected values
+  if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
+    alert('Login successful!');
+    
+    // Redirect to Google.com after successful login
+    window.location.href = 'admin.html';
+
+  } else {
+    alert('Invalid username or password. Please try again.');
   }
+}
+  
 </script>
 </script>
 
