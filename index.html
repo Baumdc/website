@@ -214,7 +214,8 @@ body {
   // Check if the entered username and password match the expected values
   if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
     alert('Login successful!');
-    // Add further logic here, such as redirecting to another page
+    window.location.href = 'google.html'; // Replace 'dashboard.html' with the desired page
+// Add further logic here, such as redirecting to another page
   } else {
     alert('Invalid username or password. Please try again.');
   }
