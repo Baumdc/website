@@ -201,34 +201,25 @@ body {
 
   
 <script>
-  async function hashString(input) {
-    const data = new TextEncoder().encode(input);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-    return hashHex;
-  }
 
   async function login() {
-    var usernameInput = document.getElementById('username');
-    var passwordInput = document.getElementById('password');
+  var usernameInput = document.getElementById('username');
+  var passwordInput = document.getElementById('password');
 
-    var username = await hashString(usernameInput.value);
-    var password = await hashString(passwordInput.value);
+  // In a real-world scenario, fetch the hashed username and hashed password associated with the account from the server.
+  // For demonstration, using hardcoded values here.
+  const storedUsername = 'User';
+  const storedPassword = 'Name';
 
-    // In a real-world scenario, fetch the hashed username and hashed password associated with the account from the server.
-    // For demonstration, using hardcoded values here.
-    const storedUsernameHash = '224c122501d021a4085b384a989b41d0ee3eb4f1c35895f387aa70216edaa9eb'; // Hash of 'der'
-    const storedPasswordHash = '80d49f584069a1d5dae3226eb97cc49a2bca5a04613299b48ed8bcededa7ca12'; // Hash of 'diedas'
-
-    // Check if the entered hashed username and hashed password match the expected values
-    if (username === storedUsernameHash && password === storedPasswordHash) {
-      alert('Login successful!');
-      // Add further logic here, such as redirecting to another page
-    } else {
-      alert('Invalid username or password. Please try again.');
-    }
+  // Check if the entered username and password match the expected values
+  if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
+    alert('Login successful!');
+    // Add further logic here, such as redirecting to another page
+  } else {
+    alert('Invalid username or password. Please try again.');
   }
+}
+
 </script>
 
 </body>
