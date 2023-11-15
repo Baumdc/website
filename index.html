@@ -218,8 +218,11 @@ body {
       // Redirect based on the username
       if (usernameInput.value === 'noone') {
         window.location.href = 'noone.html';
+      if (usernameInput.value === 'admin') {
+        window.location.href = 'google.html';
+      
       } else {
-        window.location.href = 'google.html'; // Replace 'google.html' with the desired page
+        alert('Invalid username or password. Please try again.');
       }
       
       // Add further logic here, such as redirecting to another page
