@@ -4,28 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-  h1{
-    color: green;
-    font-size:20px;
-    }
-  button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-  }
-    </style>
-  <h1 href="google.html">
-  <button type="button"> Google</button>
-</h1>
-
-  
-
   <title>Login Page</title>
-
   <style>
-    html {
+html {
       height: 100%;
     }
 
@@ -225,19 +206,16 @@
 
   <script>
     function login() {
-      const storedUsername = 'User';
-      const storedPassword = 'Name';
+      var usernameInput = document.getElementById('username');
+      var passwordInput = document.getElementById('password');
 
-      const usernameInput = document.getElementById('username');
-      const passwordInput = document.getElementById('password');
+      var username = usernameInput.value;
+      var password = passwordInput.value;
 
       // Check if the entered username and password match the expected values
-      if (usernameInput.value === storedUsername && passwordInput.value === storedPassword) {
+      if (username === 'der' && password === 'diedas') {
         alert('Login successful!');
-
-        // Redirect to Google.com after successful login
-        window.location.href = 'google.html';
-
+        // Add further logic here, such as redirecting to another page
       } else {
         alert('Invalid username or password. Please try again.');
       }
