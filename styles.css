@@ -116,3 +116,9 @@ footer {
     color: #fff;
     text-decoration: none;
 }
+
+.instagram-logo {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+}
