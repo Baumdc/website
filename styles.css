@@ -18,11 +18,13 @@ h1 {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
+    text-align: center; /* Align text and buttons to center */
 }
 p {
     color: #555;
     line-height: 1.6;
     margin-bottom: 20px;
+    text-align: center; /* Align text to center */
 }
 .pricing {
     background-color: #fff;
@@ -34,11 +36,13 @@ p {
 .pricing h2 {
     color: #333;
     margin-bottom: 20px;
+    text-align: center; /* Align text to center */
 }
 .pricing ul {
     list-style-type: none;
     padding: 0;
     margin-left: 0;
+    text-align: center; /* Align text to center */
 }
 .pricing ul li {
     margin-bottom: 10px;
@@ -70,6 +74,8 @@ p {
     display: inline-block;
     margin-right: 2%;
     vertical-align: top;
+    position: relative;
+    text-align: center; /* Align text and buttons to center */
 }
 .offer:last-child {
     margin-right: 0;
@@ -86,7 +92,7 @@ p {
     line-height: 1.6;
 }
 .buy-btn {
-    display: block;
+    display: inline-block; /* Change display to inline-block */
     background-color: #007bff;
     color: white;
     padding: 8px 16px;
@@ -96,8 +102,6 @@ p {
     transition: background-color 0.3s;
     margin-top: 10px;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
 }
 .buy-btn:hover {
     background-color: #0056b3;
