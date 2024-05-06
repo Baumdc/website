@@ -62,6 +62,7 @@
             transition: background-color 0.3s;
             margin-top: 20px;
             margin-bottom: 10px;
+            cursor: pointer;
         }
         .contact-btn:hover {
             background-color: #45a049;
@@ -72,6 +73,13 @@
             padding: 20px;
             margin-bottom: 20px;
             transition: box-shadow 0.3s;
+            width: 48%;
+            display: inline-block;
+            margin-right: 2%;
+            vertical-align: top;
+        }
+        .offer:last-child {
+            margin-right: 0;
         }
         .offer:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,7 +93,7 @@
             line-height: 1.6;
         }
         .buy-btn {
-            display: inline-block;
+            display: block;
             background-color: #007bff;
             color: white;
             padding: 8px 16px;
@@ -93,9 +101,22 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+            margin-top: 10px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
         }
         .buy-btn:hover {
             background-color: #0056b3;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .offer {
+                width: 100%;
+                display: block;
+                margin-right: 0;
+            }
         }
     </style>
 </head>
