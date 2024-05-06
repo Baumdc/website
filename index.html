@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
         }
@@ -19,6 +19,7 @@
         }
         h1 {
             color: #333;
+            margin-bottom: 10px;
         }
         .container {
             max-width: 800px;
@@ -28,19 +29,73 @@
         p {
             color: #555;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
         .pricing {
-            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
         }
         .pricing h2 {
             color: #333;
+            margin-bottom: 20px;
         }
         .pricing ul {
             list-style-type: none;
             padding: 0;
+            margin-left: 0;
         }
         .pricing ul li {
             margin-bottom: 10px;
+            color: #666;
+        }
+        .contact-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .contact-btn:hover {
+            background-color: #45a049;
+        }
+        .offer {
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .offer:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .offer h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .offer p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .buy-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .buy-btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -50,17 +105,34 @@
     </header>
     <div class="container">
         <p>Hello, I'm Arne Schultz, and I offer homework services for just 5-10 euros. Need help with your assignments? I'm here to assist you!</p>
+        
+        <div class="offer">
+            <h3>Math Homework Assistance</h3>
+            <p>Struggling with math problems? I can help you solve them efficiently. Price: 1 euro per assignment.</p>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="offer">
+            <h3>German Homework Support</h3>
+            <p>Need help with your German assignments? I provide assistance with grammar, vocabulary, and more. Price: 1 euro per assignment.</p>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="offer">
+            <h3>English & Latin Homework Help</h3>
+            <p>Stuck with English or Latin assignments? Let me help you understand the concepts and complete your tasks. Price: 1 euro per assignment.</p>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+
         <div class="pricing">
-            <h2>Services Offered:</h2>
+            <h2>Additional Services Offered:</h2>
             <ul>
-                <li>Homework Help</li>
-                <li>Assignment Assistance</li>
                 <li>Tutoring Sessions</li>
                 <li>Exam Preparation</li>
             </ul>
-            <p>Contact me for more details!</p>
+            <p>Feel free to contact me for more details or to discuss your specific needs.</p>
+            <a href="mailto:your.email@example.com" class="contact-btn">Contact Me</a>
         </div>
     </div>
 </body>
 </html>
-
