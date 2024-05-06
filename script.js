@@ -1,5 +1,3 @@
-// JavaScript code for your website
-
 // Slideshow functionality
 const slideshowImages = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Replace with your image filenames
 let currentImageIndex = 0;
@@ -63,7 +61,7 @@ fetch('https://www.instagram.com/fascinationphoto/?__a=1')
     .then(data => {
         const latestPosts = data.graphql.user.edge_owner_to_timeline_media.edges;
         latestPosts.forEach(post => {
-            const imgUrl = post.node.thumbnail_src;
+            const imgUrl = post.node.thumbnail_src; // Accessing the thumbnail image URL
             const imgElement = document.createElement('img');
             imgElement.src = imgUrl;
             instagramFeed.appendChild(imgElement);
