@@ -58,7 +58,7 @@ contactForm.addEventListener('submit', function(event) {
 // Instagram feed
 const instagramFeed = document.getElementById('instagram-feed');
 
-fetch('https://www.instagram.com/your_instagram_username/?__a=1')
+fetch('https://www.instagram.com/fascinationphoto/?__a=1')
     .then(response => response.json())
     .then(data => {
         const latestPosts = data.graphql.user.edge_owner_to_timeline_media.edges;
