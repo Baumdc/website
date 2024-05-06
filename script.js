@@ -54,3 +54,19 @@ contactForm.addEventListener('submit', function(event) {
     // Reset form fields
     contactForm.reset();
 });
+
+// Instagram feed
+const instagramFeed = document.getElementById('instagram-feed');
+
+fetch('https://www.instagram.com/your_instagram_username/?__a=1')
+    .then(response => response.json())
+    .then(data => {
+        const latestPosts = data.graphql.user.edge_owner_to_timeline_media.edges;
+        latestPosts.forEach(post => {
+            const imgUrl = post.node.thumbnail_src;
+            const imgElement = document.createElement('img');
+            imgElement.src = imgUrl;
+            instagramFeed.appendChild(imgElement);
+        });
+    })
+    .catch(error => console.error('Error fetching Instagram feed:', error));
