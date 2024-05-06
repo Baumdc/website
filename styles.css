@@ -99,7 +99,7 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Align text in the center */
 }
 
 .social-links {
