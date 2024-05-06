@@ -9,30 +9,57 @@
 <body>
     <header>
         <h1>Welcome to Your Name's Photography</h1>
-        <!-- Navigation links -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="home">
-        <!-- Slideshow of your best photographs -->
+        <div id="slideshow">
+            <!-- Slideshow of your best photographs -->
+        </div>
     </section>
 
     <section id="portfolio">
-        <!-- Grid of thumbnails for landscapes and portraits -->
+        <h2>Portfolio</h2>
+        <div id="landscape-gallery">
+            <!-- Grid of thumbnails for landscapes -->
+        </div>
+        <div id="portrait-gallery">
+            <!-- Grid of thumbnails for portraits -->
+        </div>
     </section>
 
     <section id="about">
-        <!-- About section -->
+        <h2>About</h2>
+        <p>Your bio/statement goes here...</p>
     </section>
 
     <section id="contact">
-        <!-- Contact form -->
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <footer>
-        <!-- Social media links and copyright info -->
+        <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <!-- Add more social media links -->
+        </ul>
+        <p>&copy; 2024 Your Name's Photography. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
