@@ -7,17 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to facinationphoto's Photography</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Include header -->
+    <div id="header-placeholder"></div>
+    <script>document.getElementById('header-placeholder').innerHTML = '<object type="text/html" data="header.html" ></object>';</script>
 
     <section id="home">
         <div id="slideshow">
@@ -58,13 +50,9 @@
         </div>
     </section>
 
-    <footer>
-        <ul class="social-links">
-            <li><a href="https://www.instagram.com/fascinationphoto/?__a=1">Instagram</a></li>
-        </ul>
-        <img src="instagram_logo.png" alt="Instagram Logo" class="instagram-logo">
-        <p>&copy; 2024 facinationphoto's Photography. All rights reserved.</p>
-    </footer>
+    <!-- Include footer -->
+    <div id="footer-placeholder"></div>
+    <script>document.getElementById('footer-placeholder').innerHTML = '<object type="text/html" data="footer.html" ></object>';</script>
 
     <script src="script.js"></script>
 </body>
