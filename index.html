@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Include header -->
+    <!-- Placeholder for header -->
     <div id="header-placeholder"></div>
-    <script>document.getElementById('header-placeholder').innerHTML = '<object type="text/html" data="header.html" ></object>';</script>
 
     <section id="home">
         <div id="slideshow">
@@ -50,10 +49,26 @@
         </div>
     </section>
 
-    <!-- Include footer -->
+    <!-- Placeholder for footer -->
     <div id="footer-placeholder"></div>
-    <script>document.getElementById('footer-placeholder').innerHTML = '<object type="text/html" data="footer.html" ></object>';</script>
 
     <script src="script.js"></script>
+    <script>
+        // Load header
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                headerPlaceholder.innerHTML = html;
+            });
+
+        // Load footer
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                footerPlaceholder.innerHTML = html;
+            });
+    </script>
 </body>
 </html>
