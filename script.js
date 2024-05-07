@@ -1,5 +1,5 @@
 // Slideshow functionality
-const slideshowImages = ['image1.jpeg', 'image2.jpeg', 'image3.jpg']; // Replace with your image filenames
+const slideshowImages = ['IMG_1908.jpeg', 'image2.jpeg', 'image3.jpg']; // Replace with your image filenames
 let currentImageIndex = 0;
 const slideshowContainer = document.getElementById('slideshow');
 
