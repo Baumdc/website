@@ -69,21 +69,6 @@ section {
     margin: 10px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
 button {
     padding: 10px 20px;
