@@ -110,3 +110,11 @@ footer {
     height: auto;
     margin-right: 10px;
 }
+.social-links {
+    text-align: center;
+}
+
+.social-links img.instagram-logo {
+    display: inline-block;
+}
+
