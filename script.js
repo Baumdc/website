@@ -30,28 +30,6 @@ const portraitImages = ['portrait1.jpg', 'portrait2.jpg', 'portrait3.jpg'];
 populateGallery(landscapeGallery, landscapeImages);
 populateGallery(portraitGallery, portraitImages);
 
-// Contact form submission
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Collect form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-
-    // Replace this with your desired form submission logic (e.g., AJAX request)
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Subject:', subject);
-    console.log('Message:', message);
-
-    // Reset form fields
-    contactForm.reset();
-});
 
 // Instagram feed
 const instagramFeed = document.getElementById('instagram-feed');
